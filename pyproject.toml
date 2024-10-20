@@ -1,0 +1,84 @@
+[tool.poetry]
+name = "cq-studio"
+version = "0.8.1"
+description = "Hot-reloading server for CadQuery 3D objects with in-browser viewer from yacv-server"
+authors = ["Charles Cazabon <charlesc-software-cqs@pyropus.ca>"]
+readme = "README.md"
+license = "GPL-2.0-only"
+homepage = "https://pyropus.ca/docs/cq-studio/"
+documentation = "https://pyropus.ca/docs/cq-studio/"
+repository = "https://github.com/ccazabon/cq-studio/"
+keywords = [
+    "model",
+    "3D",
+    "CAD",
+    "viewer",
+    "CadQuery",
+    "programmatic",
+    "modelling",
+    "server",
+    "hot-reload",
+    "editor",
+    "part",
+    "design",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Environment :: Web Environment",
+    "Intended Audience :: Education",
+    "Intended Audience :: End Users/Desktop",
+    "Intended Audience :: Manufacturing",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Multimedia :: Graphics :: 3D Modeling",
+    "Topic :: Multimedia :: Graphics :: Viewers",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Visualization",
+]
+exclude = [
+    ".git",
+    ".venv",
+    "dist",
+    "tests",
+    ".editorconfig",
+    ".flake8",
+    ".gitignore",
+    "Makefile",
+    "*.stl",
+]
+include = [
+    "docs/*",
+    "docs/*/*",
+    "docs/*/*/*",
+    "docs/*/*/*/*",
+    "docs/*/*/*/*/*",
+    { path = "example_project", format = ["sdist"] },
+    { path = "example_project/*", format = ["sdist"] },
+    "COPYING",
+    "LICENSE",
+    { path = "cq-studio-*-docs", format = ["wheel"] },
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+cadquery = "^2.4.0"
+click = "*"
+build123d = "*"
+yacv-server = "*"
+
+[tool.poetry.group.dev.dependencies]
+black = "*"
+isort = {extras = ["black"], version = "*"}
+flake8 = {extras = ["black"], version = "*"}
+mypy = "*"
+sphinx = "*"
+
+[tool.poetry.scripts]
+cq-studio = "cq_studio.server:run"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+

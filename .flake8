@@ -1,0 +1,14 @@
+[flake8]
+max-line-length = 96
+# max-complexity = 10
+extend-exclude =
+    .git,
+    terraform,
+    .mypy_cache,
+    .venv,
+    .dev-local,
+    dev-scripts,
+    data
+# extend-ignore = E203,W503
+extend-ignore = E731
+# extend-select = W504

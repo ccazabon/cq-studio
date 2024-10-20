@@ -49,16 +49,11 @@ exclude = [
     "*.stl",
 ]
 include = [
-    "docs/*",
-    "docs/*/*",
-    "docs/*/*/*",
-    "docs/*/*/*/*",
-    "docs/*/*/*/*/*",
     { path = "example_project", format = ["sdist"] },
     { path = "example_project/*", format = ["sdist"] },
     "COPYING",
     "LICENSE",
-    { path = "cq-studio-*-docs", format = ["wheel"] },
+    { path = "cq-studio-*-docs", format = ["wheel", "sdist"] },
 ]
 
 [tool.poetry.dependencies]
